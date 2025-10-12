@@ -1,9 +1,15 @@
-import type { NextConfig } from "next";
-
-const nextConfig: NextConfig = {
-  experimental: {
-    optimizePackageImports: ["next-themes"],
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  images: {
+    remotePatterns: [
+      {
+        protocol: "http",
+        hostname: "localhost",
+        port: "4000", // your backend port
+        pathname: "/uploads/**",
+      },
+    ],
   },
 };
 
-export default nextConfig;
+module.exports = nextConfig;
