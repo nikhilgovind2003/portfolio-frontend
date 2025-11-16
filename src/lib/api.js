@@ -1,6 +1,5 @@
-const API_URL = process.env.NEXT_PUBLIC_API_URL;  // or hardcoded?
-export const MEDIA_URL = process.env.NEXT_PUBLIC_MEDIA_URL;  // or hardcoded?
-
+const API_URL = process.env.NEXT_PUBLIC_API_URL
+export const MEDIA_URL = process.env.NEXT_PUBLIC_MEDIA_URL
 
 export default async function fetchAPI(endpoint, options = {}) {
     try {
@@ -10,7 +9,7 @@ export default async function fetchAPI(endpoint, options = {}) {
         }
         return await res.json();
     } catch (err) {
-        console.error("Fetch error:", err.message);
+        console.log("Fetch error:", err.message);
         throw err;
     }
 }
