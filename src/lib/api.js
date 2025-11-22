@@ -9,7 +9,6 @@ export default async function fetchAPI(endpoint, options = {}) {
         }
         return await res.json();
     } catch (err) {
-        console.log("Fetch error:", err.message);
         throw err;
     }
 }

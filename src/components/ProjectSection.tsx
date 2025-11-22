@@ -42,7 +42,7 @@ export default function ProjectSection({ title, projects }: ProjectProps) {
             >
               <div className="relative overflow-hidden h-48">
                 <Image
-                  src={project.media_path ? `${MEDIA_URL}${project.media_path}` : 'https://images.unsplash.com/photo-1557821552-17105176677c?w=600'}
+                  src={project.media_path ? `${MEDIA_URL}${project.media_path}` : ''}
                   alt={project.media_alt || project.title}
                   width={600}
                   height={400}

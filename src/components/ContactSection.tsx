@@ -1,5 +1,6 @@
 import { Loader2, Mail } from 'lucide-react';
 import React, { useState } from 'react'
+import { toast } from 'react-toastify';
 
 
 type contactProps = {
@@ -15,28 +16,46 @@ export default function ContactSection({ title }: contactProps) {
     // API Configuration
     const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL;
     
-    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-        e.preventDefault();
-        setFormSubmitting(true);
+const validateEmail = (email: string) => {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+};
 
-        try {
-            const response = await fetch(`${API_BASE_URL}/contact`, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(formData)
-            });
+const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  e.preventDefault();
 
-            if (!response.ok) throw new Error('Failed to send message');
+  // Basic validations
+  if (!formData.name.trim()) {
+    toast.error('Name is required');
+    return;
+  }
+  if (!formData.email.trim() || !validateEmail(formData.email)) {
+    toast.error('Please enter a valid email');
+    return;
+  }
+  if (!formData.message.trim()) {
+    toast.error('Message is required');
+    return;
+  }
 
-            alert('Message sent successfully!');
-            setFormData({ name: '', email: '', message: '' });
-        } catch (err) {
-            alert('Failed to send message. Please try again.');
-            console.error('Form submission error:', err);
-        } finally {
-            setFormSubmitting(false);
-        }
-    };
+  setFormSubmitting(true);
+
+  try {
+    const response = await fetch(`${API_BASE_URL}/contact`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(formData)
+    });
+
+    if (!response.ok) throw new Error('Failed to send message');
+
+    toast.success('Message sent successfully!');
+    setFormData({ name: '', email: '', message: '' });
+  } catch (err: unknown) {
+    toast.error(err.message || 'An error occurred while sending the message');
+  } finally {
+    setFormSubmitting(false);
+  }
+};
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
