@@ -9,6 +9,7 @@ import React from 'react'
 
 
 export default function ProfileSection({ cms }: ProfileSectionProps) {
+    console.log(cms.media_alt)
     return (
         <>
             <section id="home" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-32">
