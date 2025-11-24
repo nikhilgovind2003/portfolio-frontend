@@ -1,14 +1,10 @@
+"use client"
+
 import { MEDIA_URL } from '@/lib/api';
+import { skillType } from '@/lib/types';
 import Image from 'next/image';
 import React from 'react'
 
-type skillType = {
-  skills: string;
-  status: boolean;
-  sort_order: number;
-  media_path: string;
-  media_alt: string;
-}
 
 type skillsProps = {
   skills: skillType[];
@@ -17,7 +13,6 @@ type skillsProps = {
 
 export default function SkillsSection({ skills, title }: skillsProps) {
   // Duplicate skills for infinite scroll effect
-  const duplicatedSkills = [...skills, ...skills];
 
   return (
     <>

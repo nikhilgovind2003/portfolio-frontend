@@ -1,23 +1,11 @@
+"use client"
+
 import { MEDIA_URL } from '@/lib/api';
+import { ProjectType } from '@/lib/types';
 import { ExternalLink, Github } from 'lucide-react';
 import Image from 'next/image';
 import React from 'react'
 
-type TechType = {
-  name: string;
-};
-
-type ProjectType = {
-  title: string;
-  description: string;
-  media_path: string;
-  media_alt: string;
-  project_link: string;
-  github_link: string;
-  status: boolean;
-  sort_order: number;
-  technologies_list: TechType[]; // use TechType array
-};
 
 type ProjectProps = {
   projects: ProjectType[];

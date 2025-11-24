@@ -7,8 +7,8 @@
 6 silly config load:file:C:\Users\govin\AppData\Roaming\npm\etc\npmrc
 7 verbose title npm install
 8 verbose argv "install" "--package-lock-only"
-9 verbose logfile logs-max:10 dir:c:\Users\govin\Downloads\portfolio - Copy\client\%USERPROFILE%\npm-cache\_logs\2025-11-18T15_37_20_383Z-
-10 verbose logfile c:\Users\govin\Downloads\portfolio - Copy\client\%USERPROFILE%\npm-cache\_logs\2025-11-18T15_37_20_383Z-debug-0.log
+9 verbose logfile logs-max:10 dir:c:\Users\govin\Downloads\portfolio - Copy\client\%USERPROFILE%\npm-cache\_logs\2025-11-24T16_18_56_003Z-
+10 verbose logfile c:\Users\govin\Downloads\portfolio - Copy\client\%USERPROFILE%\npm-cache\_logs\2025-11-24T16_18_56_003Z-debug-0.log
 11 silly logfile start cleaning logs, removing 1 files
 12 silly packumentCache heap:4496293888 maxSize:1124073472 maxEntrySize:562036736
 13 silly logfile done cleaning log files
@@ -163,6 +163,7 @@
 15 silly audit   chalk: [ '4.1.2' ],
 15 silly audit   chownr: [ '3.0.0' ],
 15 silly audit   'client-only': [ '0.0.1' ],
+15 silly audit   clsx: [ '2.1.1' ],
 15 silly audit   color: [ '4.2.3' ],
 15 silly audit   'color-convert': [ '2.0.1' ],
 15 silly audit   'color-name': [ '1.1.4' ],
@@ -339,6 +340,7 @@
 15 silly audit   react: [ '19.1.0' ],
 15 silly audit   'react-dom': [ '19.1.0' ],
 15 silly audit   'react-is': [ '16.13.1' ],
+15 silly audit   'react-toastify': [ '11.0.5' ],
 15 silly audit   'reflect.getprototypeof': [ '1.0.10' ],
 15 silly audit   'regexp.prototype.flags': [ '1.5.4' ],
 15 silly audit   'resolve-from': [ '4.0.0' ],
@@ -402,7 +404,7 @@
 15 silly audit   yallist: [ '5.0.0' ],
 15 silly audit   'yocto-queue': [ '0.1.0' ]
 15 silly audit }
-16 http fetch POST 200 https://registry.npmjs.org/-/npm/v1/security/advisories/bulk 642ms
+16 http fetch POST 200 https://registry.npmjs.org/-/npm/v1/security/advisories/bulk 669ms
 17 silly audit report {
 17 silly audit report   'js-yaml': [
 17 silly audit report     {
@@ -417,10 +419,10 @@
 17 silly audit report   ]
 17 silly audit report }
 18 silly packumentCache corgi:https://registry.npmjs.org/js-yaml cache-miss
-19 http fetch GET 200 https://registry.npmjs.org/js-yaml 66ms (cache revalidated)
+19 http fetch GET 200 https://registry.npmjs.org/js-yaml 69ms (cache revalidated)
 20 silly packumentCache corgi:https://registry.npmjs.org/js-yaml set size:58533 disposed:false
 21 silly packumentCache corgi:https://registry.npmjs.org/@eslint%2feslintrc cache-miss
-22 http fetch GET 200 https://registry.npmjs.org/@eslint%2feslintrc 95ms (cache revalidated)
+22 http fetch GET 200 https://registry.npmjs.org/@eslint%2feslintrc 86ms (cache revalidated)
 23 silly packumentCache corgi:https://registry.npmjs.org/@eslint%2feslintrc set size:79527 disposed:false
 24 verbose cwd c:\Users\govin\Downloads\portfolio - Copy\client
 25 verbose os Windows_NT 10.0.26100

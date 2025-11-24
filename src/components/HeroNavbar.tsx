@@ -1,7 +1,7 @@
 import { Menu, Moon, Sun, X } from 'lucide-react';
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 
-export default function HeroNavbar({mobileMenuOpen, setMobileMenuOpen, darkMode, setDarkMode, cms}: {mobileMenuOpen: boolean, setMobileMenuOpen: React.Dispatch<React.SetStateAction<boolean>>, darkMode: boolean, setDarkMode: React.Dispatch<React.SetStateAction<boolean>>, cms: any}) {
+export default function HeroNavbar({mobileMenuOpen, setMobileMenuOpen, darkMode, setDarkMode}: {mobileMenuOpen: boolean, setMobileMenuOpen: React.Dispatch<React.SetStateAction<boolean>>, darkMode: boolean, setDarkMode: React.Dispatch<React.SetStateAction<boolean>>}) {
     
     // Apply dark mode
   useEffect(() => {

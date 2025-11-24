@@ -1,29 +1,11 @@
+"use client"
+
 import { MEDIA_URL } from '@/lib/api'
+import { ProfileSectionProps } from '@/lib/types'
 import Image from 'next/image'
 import React from 'react'
 
 
-export type CmsType = {
-    super_title: string;
-    title: string;
-    description: string;
-    btn_one_text: string;
-    btn_one_link: string;
-    btn_two_text: string;
-    btn_two_link: string;
-    media_path: string;
-    media_alt: string;
-    project_title: string;
-    skills_title: string;
-    about_title: string;
-    about_description: string;
-    contact_title: string;
-};
-
-
-type ProfileSectionProps = {
-    cms: CmsType;
-};
 
 
 export default function ProfileSection({ cms }: ProfileSectionProps) {

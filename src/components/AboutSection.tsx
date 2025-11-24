@@ -1,10 +1,10 @@
-import React from 'react'
+"use client"
+
+import { aboutProps } from "@/lib/types"
 
 
-type aboutProps = {
-    title: string;
-    description: string;
-}
+
+
 
 export default function AboutSection({title, description}: aboutProps) {
     return (
