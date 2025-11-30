@@ -5,19 +5,19 @@
 4 silly config load:file:C:\Users\govin\Downloads\portfolio - Copy\client\.npmrc
 5 silly config load:file:C:\Users\govin\.npmrc
 6 silly config load:file:C:\Users\govin\AppData\Roaming\npm\etc\npmrc
-7 verbose title npm install @types/react-google-recaptcha
-8 verbose argv "install" "@types/react-google-recaptcha" "--save-dev"
-9 verbose logfile logs-max:10 dir:C:\Users\govin\Downloads\portfolio - Copy\client\%USERPROFILE%\npm-cache\_logs\2025-11-28T17_36_31_831Z-
-10 verbose logfile C:\Users\govin\Downloads\portfolio - Copy\client\%USERPROFILE%\npm-cache\_logs\2025-11-28T17_36_31_831Z-debug-0.log
+7 verbose title npm install swiper
+8 verbose argv "install" "swiper"
+9 verbose logfile logs-max:10 dir:C:\Users\govin\Downloads\portfolio - Copy\client\%USERPROFILE%\npm-cache\_logs\2025-11-29T19_17_36_838Z-
+10 verbose logfile C:\Users\govin\Downloads\portfolio - Copy\client\%USERPROFILE%\npm-cache\_logs\2025-11-29T19_17_36_838Z-debug-0.log
 11 silly logfile start cleaning logs, removing 1 files
 12 silly packumentCache heap:4496293888 maxSize:1124073472 maxEntrySize:562036736
 13 silly logfile done cleaning log files
 14 silly idealTree buildDeps
-15 silly fetch manifest @types/react-google-recaptcha@*
-16 silly packumentCache full:https://registry.npmjs.org/@types%2freact-google-recaptcha cache-miss
-17 http fetch GET 200 https://registry.npmjs.org/@types%2freact-google-recaptcha 812ms (cache miss)
-18 silly packumentCache full:https://registry.npmjs.org/@types%2freact-google-recaptcha set size:undefined disposed:false
-19 silly placeDep ROOT @types/react-google-recaptcha@2.1.9 OK for: client@0.1.0 want: *
+15 silly fetch manifest swiper@*
+16 silly packumentCache full:https://registry.npmjs.org/swiper cache-miss
+17 http fetch GET 200 https://registry.npmjs.org/swiper 280ms (cache miss)
+18 silly packumentCache full:https://registry.npmjs.org/swiper set size:undefined disposed:false
+19 silly placeDep ROOT swiper@12.0.3 OK for: client@0.1.0 want: *
 20 silly reify moves {}
 21 silly audit bulk request {
 21 silly audit   '@alloc/quick-lru': [ '5.2.0' ],
@@ -106,6 +106,7 @@
 21 silly audit   '@types/node': [ '20.19.13' ],
 21 silly audit   '@types/react': [ '19.1.12' ],
 21 silly audit   '@types/react-dom': [ '19.1.9' ],
+21 silly audit   '@types/react-google-recaptcha': [ '2.1.9' ],
 21 silly audit   '@typescript-eslint/eslint-plugin': [ '8.42.0' ],
 21 silly audit   ignore: [ '7.0.5', '5.3.2' ],
 21 silly audit   '@typescript-eslint/parser': [ '8.42.0' ],
@@ -411,11 +412,11 @@
 21 silly audit   'word-wrap': [ '1.2.5' ],
 21 silly audit   yallist: [ '5.0.0' ],
 21 silly audit   'yocto-queue': [ '0.1.0' ],
-21 silly audit   '@types/react-google-recaptcha': [ '2.1.9' ]
+21 silly audit   swiper: [ '12.0.3' ]
 21 silly audit }
-22 http cache @types/react-google-recaptcha@https://registry.npmjs.org/@types/react-google-recaptcha/-/react-google-recaptcha-2.1.9.tgz 0ms (cache hit)
-23 silly tarball no local data for @types/react-google-recaptcha@https://registry.npmjs.org/@types/react-google-recaptcha/-/react-google-recaptcha-2.1.9.tgz. Extracting by manifest.
-24 http fetch POST 200 https://registry.npmjs.org/-/npm/v1/security/advisories/bulk 539ms
+22 http cache swiper@https://registry.npmjs.org/swiper/-/swiper-12.0.3.tgz 0ms (cache hit)
+23 silly tarball no local data for swiper@https://registry.npmjs.org/swiper/-/swiper-12.0.3.tgz. Extracting by manifest.
+24 http fetch POST 200 https://registry.npmjs.org/-/npm/v1/security/advisories/bulk 289ms
 25 silly audit report {
 25 silly audit report   'js-yaml': [
 25 silly audit report     {
@@ -430,13 +431,13 @@
 25 silly audit report   ]
 25 silly audit report }
 26 silly packumentCache corgi:https://registry.npmjs.org/js-yaml cache-miss
-27 http fetch GET 200 https://registry.npmjs.org/@types/react-google-recaptcha/-/react-google-recaptcha-2.1.9.tgz 559ms (cache miss)
-28 http fetch GET 200 https://registry.npmjs.org/js-yaml 273ms (cache revalidated)
-29 silly packumentCache corgi:https://registry.npmjs.org/js-yaml set size:58533 disposed:false
-30 silly packumentCache corgi:https://registry.npmjs.org/@eslint%2feslintrc cache-miss
-31 http fetch GET 200 https://registry.npmjs.org/@eslint%2feslintrc 274ms (cache revalidated)
-32 silly packumentCache corgi:https://registry.npmjs.org/@eslint%2feslintrc set size:80753 disposed:false
-33 silly ADD node_modules/@types/react-google-recaptcha
+27 http cache https://registry.npmjs.org/js-yaml 23ms (cache hit)
+28 silly packumentCache corgi:https://registry.npmjs.org/js-yaml set size:58533 disposed:false
+29 silly packumentCache corgi:https://registry.npmjs.org/@eslint%2feslintrc cache-miss
+30 http cache https://registry.npmjs.org/@eslint%2feslintrc 23ms (cache hit)
+31 silly packumentCache corgi:https://registry.npmjs.org/@eslint%2feslintrc set size:80753 disposed:false
+32 http fetch GET 200 https://registry.npmjs.org/swiper/-/swiper-12.0.3.tgz 1385ms (cache miss)
+33 silly ADD node_modules/swiper
 34 verbose cwd C:\Users\govin\Downloads\portfolio - Copy\client
 35 verbose os Windows_NT 10.0.26100
 36 verbose node v24.11.0

@@ -9,12 +9,11 @@ import ContactSection from '@/components/ContactSection';
 import FooterSection from '@/components/FooterSection';
 import { useState } from 'react';
 import { CmsType, ProjectType, skillType } from '@/lib/types';
+import RecaptchaProvider from './RecaptchaProvider';
 
-export default function Portfolio({cms, projects, skills}:  {cms: CmsType, projects: ProjectType[], skills: skillType[]}) {
+export default function Portfolio({ cms, projects, skills }: { cms: CmsType, projects: ProjectType[], skills: skillType[] }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [darkMode, setDarkMode] = useState(true);
-
-
 
   return (
     <div className={`min-h-screen transition-colors duration-300 ${darkMode ? 'dark bg-gray-900 text-white' : 'bg-gray-50 text-gray-900'}`}>
@@ -23,10 +22,12 @@ export default function Portfolio({cms, projects, skills}:  {cms: CmsType, proje
       <ProjectSection title={cms?.project_title} projects={projects} />
       <SkillsSection skills={skills} title={cms?.skills_title} />
       <AboutSection title={cms?.about_title} description={cms?.about_description} />
-      <ContactSection title={cms?.contact_title} />
-    
+      <RecaptchaProvider>
+        <ContactSection title={cms?.contact_title} />
+      </RecaptchaProvider>
+
       {/* Footer */}
- <FooterSection/>
+      <FooterSection />
       <style>{`
         @keyframes fadeInUp {
           from {

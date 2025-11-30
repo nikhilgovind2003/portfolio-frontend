@@ -1,4 +1,4 @@
-import { Menu, Moon, Sun, X } from 'lucide-react';
+import { Link, Menu, Moon, Sun, X } from 'lucide-react';
 import React, { useEffect } from 'react'
 
 export default function HeroNavbar({mobileMenuOpen, setMobileMenuOpen, darkMode, setDarkMode}: {mobileMenuOpen: boolean, setMobileMenuOpen: React.Dispatch<React.SetStateAction<boolean>>, darkMode: boolean, setDarkMode: React.Dispatch<React.SetStateAction<boolean>>}) {
@@ -14,16 +14,16 @@ export default function HeroNavbar({mobileMenuOpen, setMobileMenuOpen, darkMode,
         <nav className="sticky top-0 z-50 backdrop-blur-lg bg-white/80 dark:bg-gray-900/80 border-b border-gray-200 dark:border-gray-800 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
-            <a href="#home" className="text-xl font-bold bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">
+            <Link href="#home" className="text-xl font-bold bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">
               Nikhil Govind OV
-            </a>
+            </Link>
 
             {/* Desktop Menu */}
             <div className="hidden md:flex items-center gap-8">
-              <a href="#projects" className="hover:text-blue-500 transition-colors font-medium">Projects</a>
-              <a href="#skills" className="hover:text-blue-500 transition-colors font-medium">Skills</a>
-              <a href="#about" className="hover:text-blue-500 transition-colors font-medium">About</a>
-              <a href="#contact" className="hover:text-blue-500 transition-colors font-medium">Contact</a>
+              <Link href="#projects" className="hover:text-blue-500 transition-colors font-medium">Projects</Link>
+              <Link href="#skills" className="hover:text-blue-500 transition-colors font-medium">Skills</Link>
+              <Link href="#about" className="hover:text-blue-500 transition-colors font-medium">About</Link>
+              <Link href="#contact" className="hover:text-blue-500 transition-colors font-medium">Contact</Link>
               <button
                 onClick={() => setDarkMode(!darkMode)}
                 className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"

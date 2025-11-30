@@ -1,8 +1,12 @@
+// ========================================
+// 1. ContactSection Component (FIXED)
+// ========================================
 "use client";
 
 import { Loader2, Mail } from 'lucide-react';
 import React, { useState } from 'react';
 import { toast } from 'react-toastify';
+import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
 
 type ContactProps = {
   title: string;
@@ -12,6 +16,8 @@ export default function ContactSection({ title }: ContactProps) {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [formSubmitting, setFormSubmitting] = useState(false);
 
+  const { executeRecaptcha } = useGoogleReCaptcha();
+  
   const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || '';
 
   const validateEmail = (email: string) => {
@@ -37,18 +43,34 @@ export default function ContactSection({ title }: ContactProps) {
     setFormSubmitting(true);
 
     try {
+      // Check if reCAPTCHA is available
+      if (!executeRecaptcha) {
+        throw new Error('Recaptcha not yet available');
+      }
+
+      // Get reCAPTCHA token
+      const token = await executeRecaptcha('contact_form_submit');
+
+      // Send form data with token
       const response = await fetch(`${API_BASE_URL}/contact`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          ...formData,
+          recaptchaToken: token  // Include the token
+        }),
       });
 
-      if (!response.ok) throw new Error('Failed to send message');
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || 'Failed to send message');
+      }
 
       toast.success('Message sent successfully!');
       setFormData({ name: '', email: '', message: '' });
+      
     } catch (error) {
-      // Type guard required: error is unknown in TS
       if (error instanceof Error) {
         toast.error(error.message);
       } else {

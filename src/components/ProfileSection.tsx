@@ -3,6 +3,7 @@
 import { MEDIA_URL } from '@/lib/api'
 import { ProfileSectionProps } from '@/lib/types'
 import Image from 'next/image'
+import Link from 'next/link'
 import React from 'react'
 
 
@@ -25,18 +26,19 @@ export default function ProfileSection({ cms }: ProfileSectionProps) {
                             {cms?.description}
                         </p>
                         <div className="flex flex-wrap gap-4 pt-4">
-                            <a
+                            <Link
                                 href={cms?.btn_one_link}
                                 className="px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-lg font-medium hover:shadow-lg hover:shadow-blue-500/50 transform hover:-translate-y-0.5 transition-all"
                             >
                                 {cms?.btn_one_text}
-                            </a>
-                            <a
-                                href={cms?.btn_two_link}
+                            </Link>
+                            <Link
+                                href={`${MEDIA_URL}${cms?.resume}`}
+                                target='_blank'
                                 className="px-6 py-3 border-2 border-gray-300 dark:border-gray-700 rounded-lg font-medium hover:border-blue-500 dark:hover:border-blue-500 transition-all"
                             >
                                 {cms?.btn_two_text}
-                            </a>
+                            </Link>
                         </div>
                     </div>
                     <div className="relative animate-fadeInUp w-72 h-72 aspect-square" style={{ animationDelay: '0.2s' }}>

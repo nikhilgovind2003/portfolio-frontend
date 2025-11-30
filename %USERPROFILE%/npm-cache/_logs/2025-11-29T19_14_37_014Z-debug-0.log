@@ -7,8 +7,8 @@
 6 silly config load:file:C:\Users\govin\AppData\Roaming\npm\etc\npmrc
 7 verbose title npm install
 8 verbose argv "install" "--package-lock-only"
-9 verbose logfile logs-max:10 dir:c:\Users\govin\Downloads\portfolio - Copy\client\%USERPROFILE%\npm-cache\_logs\2025-11-28T17_25_01_725Z-
-10 verbose logfile c:\Users\govin\Downloads\portfolio - Copy\client\%USERPROFILE%\npm-cache\_logs\2025-11-28T17_25_01_725Z-debug-0.log
+9 verbose logfile logs-max:10 dir:c:\Users\govin\Downloads\portfolio - Copy\client\%USERPROFILE%\npm-cache\_logs\2025-11-29T19_14_37_014Z-
+10 verbose logfile c:\Users\govin\Downloads\portfolio - Copy\client\%USERPROFILE%\npm-cache\_logs\2025-11-29T19_14_37_014Z-debug-0.log
 11 silly logfile start cleaning logs, removing 1 files
 12 silly packumentCache heap:4496293888 maxSize:1124073472 maxEntrySize:562036736
 13 silly logfile done cleaning log files
@@ -100,6 +100,7 @@
 15 silly audit   '@types/node': [ '20.19.13' ],
 15 silly audit   '@types/react': [ '19.1.12' ],
 15 silly audit   '@types/react-dom': [ '19.1.9' ],
+15 silly audit   '@types/react-google-recaptcha': [ '2.1.9' ],
 15 silly audit   '@typescript-eslint/eslint-plugin': [ '8.42.0' ],
 15 silly audit   ignore: [ '7.0.5', '5.3.2' ],
 15 silly audit   '@typescript-eslint/parser': [ '8.42.0' ],
@@ -239,6 +240,7 @@
 15 silly audit   'has-symbols': [ '1.1.0' ],
 15 silly audit   'has-tostringtag': [ '1.0.2' ],
 15 silly audit   hasown: [ '2.0.2' ],
+15 silly audit   'hoist-non-react-statics': [ '3.3.2' ],
 15 silly audit   'import-fresh': [ '3.3.1' ],
 15 silly audit   imurmurhash: [ '0.1.4' ],
 15 silly audit   'internal-slot': [ '1.1.0' ],
@@ -339,6 +341,7 @@
 15 silly audit   'queue-microtask': [ '1.2.3' ],
 15 silly audit   react: [ '19.1.0' ],
 15 silly audit   'react-dom': [ '19.1.0' ],
+15 silly audit   'react-google-recaptcha-v3': [ '1.11.0' ],
 15 silly audit   'react-is': [ '16.13.1' ],
 15 silly audit   'react-toastify': [ '11.0.5' ],
 15 silly audit   'reflect.getprototypeof': [ '1.0.10' ],
@@ -404,7 +407,7 @@
 15 silly audit   yallist: [ '5.0.0' ],
 15 silly audit   'yocto-queue': [ '0.1.0' ]
 15 silly audit }
-16 http fetch POST 200 https://registry.npmjs.org/-/npm/v1/security/advisories/bulk 614ms
+16 http fetch POST 200 https://registry.npmjs.org/-/npm/v1/security/advisories/bulk 611ms
 17 silly audit report {
 17 silly audit report   'js-yaml': [
 17 silly audit report     {
@@ -419,11 +422,11 @@
 17 silly audit report   ]
 17 silly audit report }
 18 silly packumentCache corgi:https://registry.npmjs.org/js-yaml cache-miss
-19 http fetch GET 200 https://registry.npmjs.org/js-yaml 66ms (cache revalidated)
+19 http fetch GET 200 https://registry.npmjs.org/js-yaml 64ms (cache revalidated)
 20 silly packumentCache corgi:https://registry.npmjs.org/js-yaml set size:58533 disposed:false
 21 silly packumentCache corgi:https://registry.npmjs.org/@eslint%2feslintrc cache-miss
-22 http fetch GET 200 https://registry.npmjs.org/@eslint%2feslintrc 73ms (cache updated)
-23 silly packumentCache corgi:https://registry.npmjs.org/@eslint%2feslintrc set size:undefined disposed:false
+22 http fetch GET 200 https://registry.npmjs.org/@eslint%2feslintrc 74ms (cache revalidated)
+23 silly packumentCache corgi:https://registry.npmjs.org/@eslint%2feslintrc set size:80753 disposed:false
 24 verbose cwd c:\Users\govin\Downloads\portfolio - Copy\client
 25 verbose os Windows_NT 10.0.26100
 26 verbose node v24.11.0

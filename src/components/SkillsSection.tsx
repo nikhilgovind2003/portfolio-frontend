@@ -34,9 +34,13 @@ export default function SkillsSection({ skills, title }: skillsProps) {
                 {skills?.map((skill, index) => (
                   <div
                     key={index}
-                    className="skill-card group flex flex-col items-center justify-center p-6 bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 hover:border-blue-500 dark:hover:border-blue-500 hover:shadow-lg transition-all duration-300 min-w-[150px]"
+                    className="relative group skill-card flex flex-col items-center justify-center p-6 bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 hover:border-blue-500 dark:hover:border-blue-500 hover:shadow-lg transition-all duration-300 min-w-[150px] overflow-hidden"
                   >
-                    <div className="text-4xl mb-3 group-hover:scale-110 transition-transform">
+                    {/* Bottom-to-top animated background */}
+                    <div className="absolute bottom-0 left-0 w-full h-0 bg-gray-700 dark:bg-gray-100 transition-[height] duration-300 group-hover:h-full z-0 rounded-xl"></div>
+
+                    {/* Content on top */}
+                    <div className="relative z-10 text-4xl mb-3 group-hover:scale-110 transition-transform">
                       {skill.media_path ? (
                         <Image
                           width={100}
@@ -49,10 +53,11 @@ export default function SkillsSection({ skills, title }: skillsProps) {
                         '💻'
                       )}
                     </div>
-                    <span className="text-sm font-medium text-center group-hover:text-blue-500 transition-colors whitespace-nowrap">
+                    <span className="relative z-10 text-sm font-medium text-center group-hover:text-blue-500 transition-colors whitespace-nowrap">
                       {skill.skills}
                     </span>
                   </div>
+
                 ))}
               </div>
             </div>

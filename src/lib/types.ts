@@ -5,7 +5,7 @@ export type CmsType = {
     btn_one_text: string;
     btn_one_link: string;
     btn_two_text: string;
-    btn_two_link: string;
+    resume: string;
     media_path: string;
     media_alt: string;
     project_title: string;
