@@ -9,8 +9,8 @@ import { aboutProps } from "@/lib/types"
 export default function AboutSection({title, description}: aboutProps) {
     return (
         <>
-              <section id="about" className="bg-white dark:bg-gray-800/50 py-20">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+              <section id="about" className="bg-white dark:bg-gray-800/50 py-20 ">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl sm:text-4xl font-bold mb-4">
             {title}
           </h2>

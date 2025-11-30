@@ -16,12 +16,12 @@ export default function SkillsSection({ skills, title }: skillsProps) {
 
   return (
     <>
-      <section id="skills" className="py-20 overflow-hidden">
+      <section id="skills" className="max-w-6xl mx-auto py-20 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-center">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-4">
             {title || 'Technical Skills'}
           </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mb-12 mx-auto"></div>
+          <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mb-12"></div>
 
           {/* Auto-scrolling container */}
           <div className="relative">
@@ -37,7 +37,7 @@ export default function SkillsSection({ skills, title }: skillsProps) {
                     className="relative group skill-card flex flex-col items-center justify-center p-6 bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 hover:border-blue-500 dark:hover:border-blue-500 hover:shadow-lg transition-all duration-300 min-w-[150px] overflow-hidden"
                   >
                     {/* Bottom-to-top animated background */}
-                    <div className="absolute bottom-0 left-0 w-full h-0 bg-gray-700 dark:bg-gray-100 transition-[height] duration-300 group-hover:h-full z-0 rounded-xl"></div>
+                    {/* <div className="absolute bottom-0 left-0 w-full h-0 bg-gray-700 dark:bg-gray-100 transition-[height] duration-300 group-hover:h-full z-0 rounded-xl"></div> */}
 
                     {/* Content on top */}
                     <div className="relative z-10 text-4xl mb-3 group-hover:scale-110 transition-transform">
