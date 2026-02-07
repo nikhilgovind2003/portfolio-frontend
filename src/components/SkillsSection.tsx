@@ -1,15 +1,14 @@
-"use client"
+"use client";
 
-import { MEDIA_URL } from '@/lib/api';
-import { skillType } from '@/lib/types';
-import Image from 'next/image';
-import React from 'react'
-
+import { MEDIA_URL } from "@/lib/api";
+import { skillType } from "@/lib/types";
+import Image from "next/image";
+import React from "react";
 
 type skillsProps = {
   skills: skillType[];
   title: string;
-}
+};
 
 export default function SkillsSection({ skills, title }: skillsProps) {
   // Duplicate skills for infinite scroll effect
@@ -19,7 +18,7 @@ export default function SkillsSection({ skills, title }: skillsProps) {
       <section id="skills" className="max-w-6xl mx-auto py-20 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-            {title || 'Technical Skills'}
+            {title || "Technical Skills"}
           </h2>
           <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mb-12"></div>
 
@@ -31,34 +30,42 @@ export default function SkillsSection({ skills, title }: skillsProps) {
 
             <div className="skill-scroll-container">
               <div className="skill-scroll-content">
-                {skills?.map((skill, index) => (
-                  <div
-                    key={index}
-                    className="relative group skill-card flex flex-col items-center justify-center p-6 bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 hover:border-blue-500 dark:hover:border-blue-500 hover:shadow-lg transition-all duration-300 min-w-[150px] overflow-hidden"
-                  >
-                    {/* Bottom-to-top animated background */}
-                    {/* <div className="absolute bottom-0 left-0 w-full h-0 bg-gray-700 dark:bg-gray-100 transition-[height] duration-300 group-hover:h-full z-0 rounded-xl"></div> */}
+                {skills?.map((skill, index) => {
 
-                    {/* Content on top */}
-                    <div className="relative z-10 text-4xl mb-3 group-hover:scale-110 transition-transform">
-                      {skill.media_path ? (
-                        <Image
-                          width={100}
-                          height={100}
-                          src={`${MEDIA_URL}${skill.media_path}`}
-                          alt={skill.media_alt}
-                          className="w-12 h-12 object-contain"
-                        />
-                      ) : (
-                        '💻'
-                      )}
+                  console.log( `${MEDIA_URL}${skill.media_path}`)
+                  return (
+                    <div
+                      key={index}
+                      className="relative group skill-card flex flex-col items-center justify-center p-6 bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 hover:border-blue-500 dark:hover:border-blue-500 hover:shadow-lg transition-all duration-300 min-w-[150px] overflow-hidden"
+                    >
+                      {/* Bottom-to-top animated background */}
+                      {/* <div className="absolute bottom-0 left-0 w-full h-0 bg-gray-700 dark:bg-gray-100 transition-[height] duration-300 group-hover:h-full z-0 rounded-xl"></div> */}
+
+                      {/* Content on top */}
+                      <div className="relative z-10 text-4xl mb-3 group-hover:scale-110 transition-transform">
+                        {skill.media_path ? (
+                          <Image
+                            width={100}
+                            height={100}
+                            unoptimized
+                            src={
+                              skill.media_path
+                                ? `${MEDIA_URL}${skill.media_path}`
+                                : "/reactjs.png"
+                            }
+                            alt={skill.media_alt}
+                            className="w-12 h-12 object-contain"
+                          />
+                        ) : (
+                          "💻"
+                        )}
+                      </div>
+                      <span className="relative z-10 text-sm font-medium text-center group-hover:text-blue-500 transition-colors whitespace-nowrap">
+                        {skill.skills}
+                      </span>
                     </div>
-                    <span className="relative z-10 text-sm font-medium text-center group-hover:text-blue-500 transition-colors whitespace-nowrap">
-                      {skill.skills}
-                    </span>
-                  </div>
-
-                ))}
+                  );
+                })}
               </div>
             </div>
           </div>
@@ -130,5 +137,5 @@ export default function SkillsSection({ skills, title }: skillsProps) {
         }
       `}</style>
     </>
-  )
+  );
 }
