@@ -1,12 +1,12 @@
-const API_URL =  process.env.NEXT_PUBLIC_API_URL || "http://localhost:4000/api";
-export const MEDIA_URL = process.env.NEXT_PUBLIC_MEDIA_URL || "http://localhost:4000"
+const API_URL = process.env.NEXT_PUBLIC_API_URL || "https://portfolio-api-0cc6.onrender.com/api";
+export const MEDIA_URL = process.env.NEXT_PUBLIC_MEDIA_URL || "https://portfolio-api-0cc6.onrender.com";
 
 
 export default async function fetchAPI(endpoint, options = {}) {
     try {
 
         console.log("url", `${API_URL}/${endpoint}`)
-        const res = await fetch(`${API_URL}/${endpoint}`,   { ...options} );
+        const res = await fetch(`${API_URL}/${endpoint}`, { ...options });
         if (!res.ok) {
             throw new Error(`API request failed with status ${res.status}`);
         }
