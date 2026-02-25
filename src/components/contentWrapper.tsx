@@ -6,12 +6,12 @@ import ProjectSection from '@/components/ProjectSection';
 import SkillsSection from '@/components/SkillsSection';
 import AboutSection from '@/components/AboutSection';
 import ContactSection from '@/components/ContactSection';
+import ExperienceSection from '@/components/ExperienceSection';
 import FooterSection from '@/components/FooterSection';
 import { useState } from 'react';
-import { CmsType, ProjectType, skillType } from '@/lib/types';
-import RecaptchaProvider from './RecaptchaProvider';
+import { CmsType, ExperienceType, ProjectType, skillType } from '@/lib/types';
 
-export default function Portfolio({ cms, projects, skills }: { cms: CmsType, projects: ProjectType[], skills: skillType[] }) {
+export default function Portfolio({ cms, projects, skills, experience }: { cms: CmsType, projects: ProjectType[], skills: skillType[], experience: ExperienceType[] }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [darkMode, setDarkMode] = useState(true);
 
@@ -21,10 +21,9 @@ export default function Portfolio({ cms, projects, skills }: { cms: CmsType, pro
       <ProfileSection cms={cms} />
       <ProjectSection title={cms?.project_title} projects={projects} />
       <SkillsSection skills={skills} title={cms?.skills_title} />
+      <ExperienceSection experiences={experience} title={cms?.experience_title} />
       <AboutSection title={cms?.about_title} description={cms?.about_description} />
-      <RecaptchaProvider>
-        <ContactSection title={cms?.contact_title} />
-      </RecaptchaProvider>
+      <ContactSection title={cms?.contact_title} />
 
       {/* Footer */}
       <FooterSection />

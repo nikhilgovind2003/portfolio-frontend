@@ -16,8 +16,7 @@ export default function ContactSection({ title }: ContactProps) {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [formSubmitting, setFormSubmitting] = useState(false);
 
-  const { executeRecaptcha } = useGoogleReCaptcha();
-  
+
   const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || '';
 
   const validateEmail = (email: string) => {
@@ -43,21 +42,11 @@ export default function ContactSection({ title }: ContactProps) {
     setFormSubmitting(true);
 
     try {
-      // Check if reCAPTCHA is available
-      if (!executeRecaptcha) {
-        throw new Error('Recaptcha not yet available');
-      }
-
-      // Get reCAPTCHA token
-      const token = await executeRecaptcha('contact_form_submit');
-
-      // Send form data with token
       const response = await fetch(`${API_BASE_URL}/contact`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          ...formData,
-          recaptchaToken: token  // Include the token
+          formData
         }),
       });
 
@@ -69,7 +58,7 @@ export default function ContactSection({ title }: ContactProps) {
 
       toast.success('Message sent successfully!');
       setFormData({ name: '', email: '', message: '' });
-      
+
     } catch (error) {
       if (error instanceof Error) {
         toast.error(error.message);

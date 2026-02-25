@@ -1,28 +1,29 @@
 export type CmsType = {
-    super_title: string;
-    title: string;
-    description: string;
-    btn_one_text: string;
-    btn_one_link: string;
-    btn_two_text: string;
-    resume: string;
-    media_path: string;
-    media_alt: string;
-    project_title: string;
-    skills_title: string;
-    about_title: string;
-    about_description: string;
-    contact_title: string;
+  super_title: string;
+  title: string;
+  description: string;
+  btn_one_text: string;
+  btn_one_link: string;
+  btn_two_text: string;
+  resume: string;
+  media_path: string;
+  media_alt: string;
+  project_title: string;
+  skills_title: string;
+  about_title: string;
+  about_description: string;
+  contact_title: string;
+  experience_title: string;
 };
 
 
 export type ProfileSectionProps = {
-    cms: CmsType;
+  cms: CmsType;
 };
 
 export type aboutProps = {
-    title: string;
-    description: string;
+  title: string;
+  description: string;
 }
 
 export type TechType = {
@@ -48,3 +49,17 @@ export type skillType = {
   media_path: string;
   media_alt: string;
 }
+
+export type ExperienceType = {
+  company: string;
+  role: string;
+  location?: string;
+  start_date: string;
+  end_date?: string;
+  is_current: boolean;
+  description: string;
+  media_path?: string;
+  media_alt?: string;
+  status: boolean;
+  sort_order: number;
+};
