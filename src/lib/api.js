@@ -6,7 +6,11 @@ export default async function fetchAPI(endpoint, options = {}) {
     try {
 
         console.log("url", `${API_URL}/${endpoint}`)
-        const res = await fetch(`${API_URL}/${endpoint}`, { ...options });
+        const res = await fetch(`${API_URL}/${endpoint}`, {
+            ...options,
+            cache: "no-store",
+            next: { revalidate: 0 },
+        });
         if (!res.ok) {
             throw new Error(`API request failed with status ${res.status}`);
         }

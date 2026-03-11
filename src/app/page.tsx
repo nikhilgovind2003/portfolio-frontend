@@ -9,10 +9,6 @@ export default async function Page() {
 
   const { cms, projects, skills, experience } = data;
   
-  console.log("data", data);
-  console.log("projects", projects);
-  console.log("skills", skills);
-  console.log("experience", experience);
 
     if(error){
       return <div>Error loading data</div>;
