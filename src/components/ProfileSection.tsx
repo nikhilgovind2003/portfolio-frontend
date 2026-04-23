@@ -6,6 +6,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 import { motion } from 'framer-motion'
+import parse from 'html-react-parser'
 
 export default function ProfileSection({ cms }: ProfileSectionProps) {
 
@@ -29,14 +30,14 @@ export default function ProfileSection({ cms }: ProfileSectionProps) {
                     >
                         {cms?.title}
                     </motion.h1>
-                    <motion.p
+                    <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.3 }}
-                        className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed max-w-2xl"
+                        className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed max-w-2xl prose dark:prose-invert"
                     >
-                        {cms?.description}
-                    </motion.p>
+                        {parse(cms?.description || "")}
+                    </motion.div>
                     <motion.div
                         initial={{ opacity: 0, scale: 0.9 }}
                         animate={{ opacity: 1, scale: 1 }}

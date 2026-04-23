@@ -6,6 +6,7 @@ import Image from "next/image";
 import React from "react";
 import { Calendar, MapPin, Briefcase } from "lucide-react";
 import { motion } from "framer-motion";
+import parse from "html-react-parser";
 
 type ExperienceProps = {
   experiences: ExperienceType[];
@@ -46,7 +47,7 @@ export default function ExperienceSection({ experiences, title }: ExperienceProp
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
+        viewport={{ margin: "-50px" }}
         transition={{ duration: 0.6 }}
         className="mb-12"
       >
@@ -56,30 +57,27 @@ export default function ExperienceSection({ experiences, title }: ExperienceProp
         <motion.div
           initial={{ width: 0 }}
           whileInView={{ width: 80 }}
-          viewport={{ once: true }}
+          viewport={{ margin: "-50px" }}
           transition={{ duration: 0.8, delay: 0.3 }}
           className="h-1 bg-gradient-to-r from-blue-500 to-purple-600"
         ></motion.div>
       </motion.div>
 
-      <motion.div
-        variants={containerVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        className="relative border-l-2 border-gray-200 dark:border-gray-700 ml-3 md:ml-6 space-y-12"
-      >
+      <div className="relative border-l-2 border-gray-200 dark:border-gray-700 ml-3 md:ml-6 space-y-12">
         {sortedExperiences.map((exp, index) => (
           <motion.div
             key={index}
             variants={itemVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ margin: "-50px" }}
             className="relative pl-8 md:pl-12"
           >
             {/* Timeline Dot */}
             <motion.div
               initial={{ scale: 0 }}
               whileInView={{ scale: 1 }}
-              viewport={{ once: true }}
+              viewport={{ margin: "-50px" }}
               className={`absolute -left-[11px] top-0 w-5 h-5 rounded-full border-4 border-white dark:border-gray-900 z-10 ${exp.is_current ? 'bg-blue-600 shadow-[0_0_10px_rgba(37,99,235,0.5)]' : 'bg-gray-400'}`}
             >
               {exp.is_current && (
@@ -138,13 +136,13 @@ export default function ExperienceSection({ experiences, title }: ExperienceProp
                 </div>
               </div>
 
-              <div className="prose prose-sm dark:prose-invert max-w-none text-gray-600 dark:text-gray-300 whitespace-pre-line">
-                {exp.description}
+              <div className="prose prose-sm dark:prose-invert max-w-none text-gray-600 dark:text-gray-300 break-words overflow-hidden">
+                {parse(exp.description)}
               </div>
             </motion.div>
           </motion.div>
         ))}
-      </motion.div>
+      </div>
     </section>
   );
 }

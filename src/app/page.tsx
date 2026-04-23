@@ -1,6 +1,8 @@
 import Portfolio from "@/components/contentWrapper";
 import fetchAPI from "@/lib/api";
 
+export const dynamic = 'force-dynamic';
+
 export default async function Page() {
 
     

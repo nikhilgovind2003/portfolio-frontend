@@ -25,7 +25,7 @@ export default function HeroNavbar({mobileMenuOpen, setMobileMenuOpen, darkMode,
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center gap-8">
-            {['projects', 'experience', 'skills', 'about', 'contact'].map((item) => (
+            {['projects', 'skills', 'experience', 'about', 'contact'].map((item) => (
                <motion.div key={item} whileHover={{ y: -2 }}>
                   <Link 
                     href={`#${item}`} 
@@ -61,7 +61,7 @@ export default function HeroNavbar({mobileMenuOpen, setMobileMenuOpen, darkMode,
               className="md:hidden py-4 border-t border-gray-100 dark:border-gray-800"
             >
               <div className="flex flex-col space-y-4">
-                {['projects', 'experience', 'skills', 'about', 'contact'].map((item) => (
+                {['projects', 'skills', 'experience', 'about', 'contact'].map((item) => (
                   <motion.a
                     key={item}
                     href={`#${item}`}

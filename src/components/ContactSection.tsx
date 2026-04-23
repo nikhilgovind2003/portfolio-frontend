@@ -6,7 +6,7 @@
 import { Loader2, Mail } from 'lucide-react';
 import React, { useState } from 'react';
 import { toast } from 'react-toastify';
-import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
+import { motion } from 'framer-motion';
 
 type ContactProps = {
   title: string;
@@ -15,7 +15,6 @@ type ContactProps = {
 export default function ContactSection({ title }: ContactProps) {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [formSubmitting, setFormSubmitting] = useState(false);
-
 
   const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || '';
 
@@ -77,13 +76,34 @@ export default function ContactSection({ title }: ContactProps) {
   };
 
   return (
-    <section id="contact" className="py-20 max-w-6xl mx-auto">
+    <section id="contact" className="py-20 max-w-6xl mx-auto overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-          {title}
-        </h2>
-        <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mb-12"></div>
-        <form className="space-y-6" onSubmit={handleSubmit}>
+        <motion.div
+           initial={{ opacity: 0, x: -20 }}
+           whileInView={{ opacity: 1, x: 0 }}
+           viewport={{ margin: "-50px" }}
+           transition={{ duration: 0.6 }}
+        >
+          <h2 className="text-3xl sm:text-4xl font-bold mb-4">
+            {title}
+          </h2>
+          <motion.div 
+            initial={{ width: 0 }}
+            whileInView={{ width: 80 }}
+            viewport={{ margin: "-50px" }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="h-1 bg-gradient-to-r from-blue-500 to-purple-600 mb-12"
+          ></motion.div>
+        </motion.div>
+
+        <motion.form 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ margin: "-50px" }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="space-y-6" 
+          onSubmit={handleSubmit}
+        >
           <div className="grid sm:grid-cols-2 gap-6">
             <input
               type="text"
@@ -127,7 +147,7 @@ export default function ContactSection({ title }: ContactProps) {
               </>
             )}
           </button>
-        </form>
+        </motion.form>
       </div>
     </section>
   );

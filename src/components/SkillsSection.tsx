@@ -24,7 +24,7 @@ export default function SkillsSection({ skills, title }: skillsProps) {
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
+            viewport={{ margin: "-50px" }}
             transition={{ duration: 0.6 }}
           >
             <h2 className="text-3xl sm:text-4xl font-bold mb-4">
@@ -33,7 +33,7 @@ export default function SkillsSection({ skills, title }: skillsProps) {
             <motion.div
               initial={{ width: 0 }}
               whileInView={{ width: 80 }}
-              viewport={{ once: true }}
+              viewport={{ margin: "-50px" }}
               transition={{ duration: 0.8, delay: 0.3 }}
               className="h-1 bg-gradient-to-r from-blue-500 to-purple-600 mb-12"
             ></motion.div>
@@ -43,7 +43,7 @@ export default function SkillsSection({ skills, title }: skillsProps) {
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
+            viewport={{ margin: "-50px" }}
             transition={{ duration: 1 }}
             className="relative"
           >

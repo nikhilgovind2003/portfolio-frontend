@@ -6,6 +6,7 @@ import { ExternalLink, Github } from 'lucide-react';
 import Image from 'next/image';
 import React from 'react'
 import { motion } from 'framer-motion';
+import parse from 'html-react-parser';
 
 type ProjectProps = {
   projects: ProjectType[];
@@ -13,16 +14,6 @@ type ProjectProps = {
 };
 
 export default function ProjectSection({ title, projects }: ProjectProps) {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1
-      }
-    }
-  };
-
   const itemVariants = {
     hidden: { opacity: 0, y: 30 },
     visible: {
@@ -38,7 +29,7 @@ export default function ProjectSection({ title, projects }: ProjectProps) {
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
+          viewport={{ margin: "-50px" }}
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-3xl sm:text-4xl font-bold mb-4">
@@ -47,23 +38,20 @@ export default function ProjectSection({ title, projects }: ProjectProps) {
           <motion.div
             initial={{ width: 0 }}
             whileInView={{ width: 80 }}
-            viewport={{ once: true }}
+            viewport={{ margin: "-50px" }}
             transition={{ duration: 0.8, delay: 0.3 }}
             className="h-1 bg-gradient-to-r from-blue-500 to-purple-600 mb-12"
           ></motion.div>
         </motion.div>
 
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8"
-        >
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
             <motion.div
               key={index}
               variants={itemVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ margin: "-50px" }}
               whileHover={{ y: -10 }}
               className="group bg-white dark:bg-gray-900 rounded-xl overflow-hidden border border-gray-200 dark:border-gray-700 hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-300"
             >
@@ -74,7 +62,7 @@ export default function ProjectSection({ title, projects }: ProjectProps) {
                   alt={project.media_alt || project.title}
                   width={600}
                   height={400}
-                  className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
                 <motion.div
                   initial={{ opacity: 0 }}
@@ -100,9 +88,9 @@ export default function ProjectSection({ title, projects }: ProjectProps) {
                 <h3 className="text-xl font-bold group-hover:text-blue-500 transition-colors">
                   {project.title}
                 </h3>
-                <p className="text-gray-600 dark:text-gray-400 text-sm line-clamp-3">
-                  {project.description}
-                </p>
+                <div className="text-gray-600 dark:text-gray-400 text-sm prose prose-sm dark:prose-invert max-w-none break-words">
+                  {parse(project.description || "")}
+                </div>
 
                 {/* Technologies */}
                 <div className="flex flex-wrap gap-2">
@@ -142,7 +130,7 @@ export default function ProjectSection({ title, projects }: ProjectProps) {
               </div>
             </motion.div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );

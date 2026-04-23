@@ -26,7 +26,7 @@ export default function Portfolio({ cms, projects, skills, experience }: { cms: 
       <ContactSection title={cms?.contact_title} />
 
       {/* Footer */}
-      <FooterSection />
+      {/* <FooterSection /> */}
       <style>{`
         @keyframes fadeInUp {
           from {
