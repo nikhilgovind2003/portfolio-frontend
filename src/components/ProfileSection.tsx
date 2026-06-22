@@ -51,7 +51,7 @@ export default function ProfileSection({ cms }: ProfileSectionProps) {
                             {cms?.btn_one_text}
                         </Link>
                         <Link
-                            href={`${MEDIA_URL}${cms?.resume}`}
+                            href={`${cms?.resume}`}
                             target='_blank'
                             className="px-8 py-4 border-2 border-gray-200 dark:border-gray-800 rounded-xl font-medium hover:border-blue-500 dark:hover:border-blue-500 hover:text-blue-500 transition-all duration-300"
                         >
