@@ -55,7 +55,7 @@ export default function ContactSection({ title }: ContactProps) {
         throw new Error(data.error || 'Failed to send message');
       }
 
-      toast.success('Message sent successfully!');
+      toast.success('Thank you for reaching out');
       setFormData({ name: '', email: '', message: '' });
 
     } catch (error) {
